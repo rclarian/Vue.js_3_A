@@ -1,15 +1,19 @@
 <template>
-  
+  <div>
+    <div>{{ greet }} {{ name }}</div>
+    <div v-text="channel"></div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   data(){
     return{
-      name: "Vishwas",
+      greet: 'Hello',
+      name: 'Ryan',
+      channel: 'Codevolution',
     };
   },
 }

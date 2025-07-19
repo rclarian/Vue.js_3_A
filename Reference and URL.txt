@@ -1,0 +1,34 @@
+YT Url: https://www.youtube.com/watch?v=5uX80VI0xLE&list=PLC3y8-rFHvwgeQIfSDtEGVvvSEPDkL_1f&index=2&ab_channel=Codevolution
+
+
+--Four ways to add Vue
+1. CDN Package
+	-- <script src="https://unpkg.com/vue@next"></script>
+2. nmp
+	-- npm install vue@next
+3. Vue CLI - (used this approached on the tutorial)
+	-- Vue provides an official CLI for quickly scaffolding single page applications
+	-- npm install -g @vue/cli
+	-- vue create <project-name>
+4. Vite
+	--an opinionated web dev build tool that serves your code via natives ES Module imports
+	--your code is served at a lightning fast speed and you get nearly instant hot module replacement
+	--npm init vite-app <project-name>
+
+---CREATE A Project
+S E:\Project\Tutorial2023\VueJS\Vue.js_3_A> vue create hello-world
+
+ Successfully created project hello-world.
+👉  Get started with the following commands:
+
+---Run A Project
+ $ cd hello-world
+ $ npm run serve
+
+---Setting up with Vue CLI
+1. yarn global add @vue/cli
+2. vue crate hello-world
+3. cd hello-world
+4. yarn serve
+
+

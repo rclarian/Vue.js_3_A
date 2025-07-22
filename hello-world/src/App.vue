@@ -1,34 +1,15 @@
 <template>
   <div>
-    <div>{{ greet }} {{ name }}</div>
-    <div v-text="channel"></div>
-    <div v-html="channel"></div>
-    <div v-html="hack"></div>
-    <h2 :id="headingId">Heading</h2>
-    <button :disabled="isDisabled">Bind</button>
-    <h2 class="underline">Underline text</h2>
-    <h2 class="underline" :class="status">Status</h2>
-    <h2 :class="isPromoted && 'promoted'">Promoted Movie</h2>
-    <h2 :class="isSoldout ? 'sold-out' : 'new'">Soldout? movie</h2>
-    <h2 :class="['new', 'promoted']">Newly promoted movie</h2>
-    <h2 :class="[isPromoted && 'promoted', isSoldout ? 'sold-out' : 'new']">Array conditional movie</h2>
+    <h2 v-if="num === 0">The number is zero</h2>
+    <h2 v-else-if="num < 0">The number is negative</h2>
+    <h2 v-else-if="num > 0">The number is positive</h2>
+    <h2 v-else>Not a number</h2>
 
-    <h2 :class="{
-      promoted: isPromoted,
-      new: !isSoldout,
-      'sold-out': isSoldout
-    }">Object conditional movie</h2>
-
-    <h2 :style="{
-      color:highlightColor,
-      fontSize: headerSize + 'px',
-      padding: '20px'
-    }">Inline Style</h2>
-
-    <h2 :style="headerStyleObject">Style Object</h2>
-
-    <div :style="[baseStyleObject, successStyleObject]">Success Style</div>
-    <div :style="[baseStyleObject, dangerStyleObject]">Danger Style</div>
+    <template v-if="display">
+      <h2>Vishwas</h2>
+      <h2>Codevolution</h2>
+      <h2>Vue</h2>
+    </template>
   </div>
 </template>
 
@@ -38,37 +19,8 @@ export default {
   name: 'App',
   data(){
     return{
-      greet: 'Hello',
-      name: 'Ryan',
-      channel: '<b>Codevolution</b>',
-      hack: `<a href="#" onclick="alert('You have been hacked!')">Win a prize!</a>`,
-      headingId: 'heading',
-      isDisabled: false,
-      status: 'danger',
-      isPromoted: true,
-      isSoldout: true,
-      highlightColor: 'orange',
-      headerSize: 50,
-      headerStyleObject: {
-        color: 'orange',
-        fontSize: '50px',
-        padding: '20px'
-      },
-      baseStyleObject: {
-        fontSize: '50px',
-        padding: '10px'
-      },
-      successStyleObject: {
-        color: 'green',
-        backgroundColor: 'lightgreen',
-        border: '1px solid green',
-        padding: '20px'
-      },
-      dangerStyleObject: {
-        color: 'darkred',
-        backgroundColor: 'red',
-        border: '1px solid darkred',
-      },
+      num: 'thing',
+      display: true,
     };
   },
 }

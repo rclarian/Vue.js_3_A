@@ -11,6 +11,7 @@ module.exports = {
     ecmaVersion: 2020,
   },
   rules: {
+    'vue/no-v-for-template-key': 'off'
     // You can optionally turn off the rule completely:
     // 'vue/no-multiple-template-root': 'off'
   },

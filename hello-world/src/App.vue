@@ -15,8 +15,13 @@
       <h2>{{ name }}</h2>
       <input placeholder="Last name" />
       <hr />
-  </template>
-  <button @click="shuffle">Shuffle!</button>
+    </template>
+    <button @click="shuffle">Shuffle!</button>
+
+    <template v-for="name in names" :key="name">
+      <h2 v-if="name === 'Bruce'">{{ name }}</h2>
+    </template>
+
   </div>
 </template>
 

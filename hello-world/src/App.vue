@@ -1,22 +1,44 @@
 <template>
   <div>
-    <h2>{{ name }}</h2>
     <div>
-      <button @mouseover="changeName($event), increment(1, $event)" @mouseout="resetName(), decrement(1)">Change name</button>
+      <pre>
+        {{ JSON.stringify(formValues, null, 2) }}
+      </pre>
     </div>
+    <form>
+      <div>
+        <label for="name"> Name</label>
+        <input type="text" id="name" v-model="formValues.name">
+      </div>
 
-    <h2>{{ count }}</h2>
-    <div>
-      <button @click="count += 1">Increment</button>
-      <button @click="count -= 1">Decrement</button>
-    </div>
-    <div>
-      <button @click="increment(1, $event)">Increment 1</button>
-      <button @click="increment(5)">Increment 5</button>
-      <button @click="decrement(1)">Decrement 1</button>
-      <button @click="decrement(5)">Decrement 5</button>
-    </div>
+      <div>
+        <label for="profile">Profile Summary</label>
+        <textarea id="profile" v-model="formValues.profileSummary"></textarea>
+      </div>
+
+      <div>
+        <label for="country">Country</label>
+        <select id="country" v-model="formValues.country">
+          <option value="">Select a Country</option>
+          <option value="india">India</option>
+          <option value="philippines">Philippines</option>
+          <option value="singapore">Singapore</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="job-location">Job Location</label>
+        <select id="job-location" multiple v-model="formValues.jobLocation">
+          <option value="india">India</option>
+          <option value="philippines">Philippines</option>
+          <option value="singapore">Singapore</option>
+          <option value="vietnam">Vietnam</option>
+          <option value="malaysia">Malaysia</option>
+        </select>
+      </div>
+    </form>
   </div>
+  
 </template>
 
 <script>
@@ -25,26 +47,16 @@ export default {
   name: 'App',
   data(){
     return{
-      name: 'Vishwas',
-      originalName: 'Vishwas',
-      count: 0,
+      formValues: {
+        name: '',
+        profileSummary: '',
+        country: '',
+        jobLocation: [],
+      }
     };
   },
   methods: {
-    increment(num, event) {
-      this.count += num;
-      console.log('Increment Event', event);
-    },
-    decrement(num) {
-      this.count -= num;
-    },
-    changeName(event) {
-      this.name = 'Batman';
-      console.log('Ryan Event', event);
-    },
-    resetName() {
-      this.name = this.originalName;
-    }
+    
   },
 }
 </script>
@@ -54,24 +66,35 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
   margin-top: 60px;
 }
 
-.underline {
-  text-decoration: underline;
+label {
+  font-weight: bold;
+  display: flex;
+  margin-bottom: 5px;
 }
 
-.promoted {
-  font-style: italic;
+input + label {
+  font-weight: bold;
+  display: inline-flex;
+  margin-right: 20px;
 }
 
-.new {
-  color: olivedrab;
-}
-
-.sold-out {
-  color: red;
+input[type='text'],
+textarea,
+select {
+  display: block;
+  width: 400px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 </style>

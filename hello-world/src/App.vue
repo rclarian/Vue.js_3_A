@@ -2,19 +2,19 @@
   <div>
     <h2>{{ name }}</h2>
     <div>
-      <button v-on:click="name = 'Batman'">Change name</button>
+      <button @mouseover="changeName($event), increment(1, $event)" @mouseout="resetName(), decrement(1)">Change name</button>
     </div>
 
     <h2>{{ count }}</h2>
     <div>
-      <button v-on:click="count += 1">Increment</button>
-      <button v-on:click="count -= 1">Decrement</button>
+      <button @click="count += 1">Increment</button>
+      <button @click="count -= 1">Decrement</button>
     </div>
     <div>
-      <button v-on:click="increment(1)">Increment 1</button>
-      <button v-on:click="increment(5)">Increment 5</button>
-      <button v-on:click="decrement(1)">Decrement 1</button>
-      <button v-on:click="decrement(5)">Decrement 5</button>
+      <button @click="increment(1, $event)">Increment 1</button>
+      <button @click="increment(5)">Increment 5</button>
+      <button @click="decrement(1)">Decrement 1</button>
+      <button @click="decrement(5)">Decrement 5</button>
     </div>
   </div>
 </template>
@@ -26,16 +26,25 @@ export default {
   data(){
     return{
       name: 'Vishwas',
+      originalName: 'Vishwas',
       count: 0,
     };
   },
   methods: {
-    increment(num) {
+    increment(num, event) {
       this.count += num;
+      console.log('Increment Event', event);
     },
     decrement(num) {
       this.count -= num;
     },
+    changeName(event) {
+      this.name = 'Batman';
+      console.log('Ryan Event', event);
+    },
+    resetName() {
+      this.name = this.originalName;
+    }
   },
 }
 </script>

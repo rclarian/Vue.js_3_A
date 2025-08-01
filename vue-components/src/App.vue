@@ -1,6 +1,9 @@
 <template>
   <div>
-    <GreetView/>
+    <GreetView userName="Ryan Clarian" heroName="Batman"/>
+    <GreetView userName="Joanne Clarian" heroName="SuperMan"/>
+    <GreetView userName="Kulit Quilop" heroName="Wonder Woman"/>
+    <GreetView :userName="name" :heroName="channel"/>
   </div>
   
 </template>
@@ -10,9 +13,15 @@ import GreetView from './components/GreetView.vue';
 
 export default {
   name: 'App',
-  omponents: {
+  components: {
     GreetView,
   },
+  data() {
+    return {
+      name: 'Vishwas',
+      channel: 'Codevolution'
+    }
+  }
     
   }
 

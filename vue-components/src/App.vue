@@ -4,17 +4,20 @@
     <GreetView userName="Joanne Clarian" heroName="SuperMan"/>
     <GreetView userName="Kulit Quilop" heroName="Wonder Woman"/>
     <GreetView :userName="name" :heroName="channel"/>
+    <ArticleView title="Article Title" :likes="50" :isPublished="true"/>
   </div>
   
-</template>
+</template>s
 
 <script>
 import GreetView from './components/GreetView.vue';
+import ArticleView from './components/ArticleView.vue';
 
 export default {
   name: 'App',
   components: {
     GreetView,
+    ArticleView,
   },
   data() {
     return {

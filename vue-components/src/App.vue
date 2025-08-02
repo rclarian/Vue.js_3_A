@@ -4,10 +4,11 @@
     <GreetView userName="Joanne Clarian" heroName="SuperMan"/>
     <GreetView userName="Kulit Quilop" heroName="Wonder Woman"/>
     <GreetView :userName="name" :heroName="channel"/>
-    <ArticleView title="Article Title" :likes="50" :isPublished="true"/>
+
+    <ArticleView id="my-article" title="Article Title" :likes="50" :isPublished="true"/>
   </div>
   
-</template>s
+</template>
 
 <script>
 import GreetView from './components/GreetView.vue';

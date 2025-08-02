@@ -1,31 +1,29 @@
 <template>
   <div>
-    <GreetView userName="Ryan Clarian" heroName="Batman"/>
-    <GreetView userName="Joanne Clarian" heroName="SuperMan"/>
-    <GreetView userName="Kulit Quilop" heroName="Wonder Woman"/>
-    <GreetView :userName="name" :heroName="channel"/>
-
-    <ArticleView id="my-article" title="Article Title" :likes="50" :isPublished="true"/>
+    <h3>AppComponent username {{ name }}</h3>
+    <ComponentC />
   </div>
   
 </template>
 
 <script>
-import GreetView from './components/GreetView.vue';
-import ArticleView from './components/ArticleView.vue';
+import ComponentC from './components/ComponentC.vue';
 
 export default {
   name: 'App',
   components: {
-    GreetView,
-    ArticleView,
+    ComponentC,
   },
   data() {
     return {
       name: 'Vishwas',
-      channel: 'Codevolution'
     }
-  }
+  },
+  provide() {
+    return {
+      username: this.name,
+    }
+  },
     
   }
 

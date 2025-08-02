@@ -1,7 +1,13 @@
 <template>
   <div>
-    <CardView content="Card content 1"/>
-    <CardView content="Card content 2"/>
+    <CardView></CardView>
+    <CardView>Card content</CardView>
+    <CardView>
+      <h2>Card content</h2>
+    </CardView>
+    <CardView>
+      <img src="https://picsum.photos/200" alt="">
+    </CardView>
   </div>
   
 </template>

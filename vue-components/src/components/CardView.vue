@@ -1,13 +1,12 @@
 <template>
     <div class="card">
-        {{ content }}
+        <slot>Default content</slot>
     </div>
 </template>
 
 <script>
     export default {
         name: 'CardView',
-        props: ['content']
     }
 </script>
 

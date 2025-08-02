@@ -1,17 +1,18 @@
 <template>
   <div>
-    <InputView v-model="name"/>
+    <CardView content="Card content 1"/>
+    <CardView content="Card content 2"/>
   </div>
   
 </template>
 
 <script>
-import InputView from './components/InputView.vue';
+import CardView from './components/CardView.vue';
 
 export default {
   name: 'App',
   components: {
-    InputView
+    CardView,
   },
   data() {
     return {

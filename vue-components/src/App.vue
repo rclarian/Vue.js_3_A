@@ -1,36 +1,31 @@
 <template>
   <div>
-    <CardView></CardView>
-    <CardView>Card content</CardView>
-    <CardView>
-      <h2>Card content</h2>
-    </CardView>
-    <CardView>
-      <img src="https://picsum.photos/200" alt="">
-    </CardView>
-
-    <CardView>
-      <template v-slot:header>
-        <h3>Header</h3>
+    <NameList>
+      <template v-slot:default="slotProps">
+        {{ slotProps.firstName }} {{ slotProps.lastName }}
       </template>
-      <template v-slot:default>
-        <img src="https://picsum.photos/200" alt="">
+    </NameList>
+    <NameList>
+      <template v-slot:default="slotProps">
+        {{ slotProps.lastName }}, {{ slotProps.firstName }}
       </template>
-      <template v-slot:footer>
-        <button>View Details</button>
+    </NameList>
+    <NameList>
+      <template v-slot:default="slotProps">
+        {{ slotProps.firstName }}
       </template>
-    </CardView>
+    </NameList>
   </div>
   
 </template>
 
 <script>
-import CardView from './components/CardView.vue';
+import NameList from './components/NameList.vue';
 
 export default {
   name: 'App',
   components: {
-    CardView,
+    NameList,
   },
   data() {
     return {

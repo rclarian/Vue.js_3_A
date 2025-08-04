@@ -8,6 +8,18 @@
     <CardView>
       <img src="https://picsum.photos/200" alt="">
     </CardView>
+
+    <CardView>
+      <template v-slot:header>
+        <h3>Header</h3>
+      </template>
+      <template v-slot:default>
+        <img src="https://picsum.photos/200" alt="">
+      </template>
+      <template v-slot:footer>
+        <button>View Details</button>
+      </template>
+    </CardView>
   </div>
   
 </template>

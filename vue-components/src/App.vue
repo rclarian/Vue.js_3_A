@@ -1,19 +1,16 @@
 <template>
   <div>
-    <CreatePost/>
-    <PostList />
+    <ParentView/>
   </div>
 </template>
 
 <script>
-import PostList from './components/PostList.vue';
-import CreatePost from './components/CreatePost.vue';
+import ParentView from './components/ParentView.vue';
 
 export default {
   name: 'App',
   components: {
-    PostList,
-    CreatePost,
+    ParentView,
   },
   data() {
     return {

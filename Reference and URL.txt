@@ -34,3 +34,6 @@ S E:\Project\Tutorial2023\VueJS\Vue.js_3_A> vue create hello-world
 --Run existing project
 npm install
 
+--Install axios
+npm add axios
+

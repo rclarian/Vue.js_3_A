@@ -1,23 +1,31 @@
 <template>
-  <div>
-    <teleport to="#portal-root">
-      <PortalRoot />
-    </teleport>
-    
+  <div class="container">
+    <div class="content">
+      <h1>My App</h1>
+      <p>
+        This is an example of how you might use Vue Teleport. I think it is a pretty neat API that is yet another awesome escape hatch that vue provides for practical reasons. Sometimes you just need to render something completely outside the Vue component tree.
+      </p>
+      <button @click="showModal = true">Show Modal</button>
+      <teleport to="#modal-root">
+        <ModalRoot v-show="showModal" @close="showModal = false">
+          This is the secret modal message!
+        </ModalRoot>
+      </teleport>
+    </div>
   </div>
 </template>
 
 <script>
-import PortalRoot from './components/PortalRoot.vue';
+import ModalRoot from './components/ModalRoot.vue';
 
 export default {
   name: 'App',
   components: {
-    PortalRoot,
+    ModalRoot,
   },
   data() {
     return {
-      
+      showModal: false,
     }
   },
   provide() {
@@ -33,17 +41,31 @@ export default {
 
 </script>
 
-<style scoped>
+<style>
+html, body, #app {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 60px; */
 }
 
-h4 {
-  color: orange;
+.container {
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
+.content {
+  max-width: 400px;
+  position: relative;
+}
+
 </style>

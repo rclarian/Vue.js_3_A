@@ -37,3 +37,10 @@ npm install
 --Install axios
 npm add axios
 
+--API Testing url
+https://jsonplaceholder.typicode.com/
+
+
+
+
+

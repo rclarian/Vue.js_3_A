@@ -1,19 +1,18 @@
 <template>
   <div>
-    <DemoOne/>
-    <DemoTwo/>
+    <MethodsView/>
+    
   </div>
 </template>
 
 <script>
-import DemoOne from './components/DemoOne.vue';
-import DemoTwo from './components/DemoTwo.vue';
+import MethodsView from './components/MethodsView.vue';
 
 export default {
   name: 'App',
   components: {
-    DemoOne,
-    DemoTwo
+    MethodsView,
+    
   },
   data() {
     return {

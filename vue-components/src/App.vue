@@ -1,16 +1,19 @@
 <template>
   <div>
-    <DataView/>
+    <DemoOne/>
+    <DemoTwo/>
   </div>
 </template>
 
 <script>
-import DataView from './components/DataView.vue';
+import DemoOne from './components/DemoOne.vue';
+import DemoTwo from './components/DemoTwo.vue';
 
 export default {
   name: 'App',
   components: {
-    DataView,
+    DemoOne,
+    DemoTwo
   },
   data() {
     return {

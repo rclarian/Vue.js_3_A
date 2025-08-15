@@ -1,17 +1,17 @@
 <template>
   <div>
-    <WatchView/>
+    <ProvideInject/>
     
   </div>
 </template>
 
 <script>
-import WatchView from './components/WatchView.vue';
+import ProvideInject from './components/ProvideInject.vue';
 
 export default {
   name: 'App',
   components: {
-    WatchView,
+    ProvideInject,
     
   },
   data() {

@@ -1,22 +1,34 @@
 <template>
     <div>
         <input type="text" ref="inputRef">
-        <PostList ref="postListRef"/>
+        <!-- <PostList ref="postListRef"/> -->
     </div>
 </template>
 
 <script>
-import PostList from './PostList.vue';
+import { ref, onMounted } from 'vue'
+// import PostList from './PostList.vue';
     export default {
         name: 'TemplateRef',
         components: {
-            PostList
+            // PostList
         },
-        mounted() {
-            console.log(this.$refs.postListRef)
-            this.$refs.inputRef.focus()
-            // this.$refs.postListRef.focus()
+        setup(){
+            const inputRef = ref(null);
+
+            onMounted(() => {
+                inputRef.value.focus()
+            })
+
+            return {
+                inputRef
+            }
         }
+        // mounted() {
+        //     console.log(this.$refs.postListRef)
+        //     this.$refs.inputRef.focus()
+        //     // this.$refs.postListRef.focus()
+        // }
     }
 </script>
 

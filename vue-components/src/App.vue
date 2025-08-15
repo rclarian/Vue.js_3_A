@@ -1,17 +1,17 @@
 <template>
   <div>
-    <VModel/>
+    <ComputedOption/>
     
   </div>
 </template>
 
 <script>
-import VModel from './components/VModel.vue';
+import ComputedOption from './components/ComputedOption.vue';
 
 export default {
   name: 'App',
   components: {
-    VModel,
+    ComputedOption,
     
   },
   data() {

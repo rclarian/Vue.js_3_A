@@ -1,17 +1,17 @@
 <template>
   <div>
-    <ComputedOption/>
+    <WatchView/>
     
   </div>
 </template>
 
 <script>
-import ComputedOption from './components/ComputedOption.vue';
+import WatchView from './components/WatchView.vue';
 
 export default {
   name: 'App',
   components: {
-    ComputedOption,
+    WatchView,
     
   },
   data() {

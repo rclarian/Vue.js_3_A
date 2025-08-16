@@ -5,10 +5,19 @@
 </template>
 
 <script>
-import CounterMixis from '../mixins/counter'
+// import CounterMixis from '../mixins/counter'
+import useCounter from '@/composables/userCounter';
     export default {
         name: 'HoverCounter',
-        mixins: [CounterMixis]
+        // mixins: [CounterMixis]
+        setup(){
+            const {count, incrementCount} = useCounter();
+
+            return{
+                count,
+                incrementCount
+            }
+        }
     }
 </script>
 

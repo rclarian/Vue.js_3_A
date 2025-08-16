@@ -4,7 +4,7 @@
             <input type="text" placeholder="First Name" v-model="firstName">
             <input type="text" placeholder="Last Name" v-model="lastName">
         </div>
-        <PersonGreeting :firstName="firstName" :lastName="lastName"/>
+        <PersonGreeting :firstName="firstName" :lastName="lastName" @callHeroes="callHeroes"/>
     </div>
 </template>
 
@@ -20,9 +20,14 @@ import PersonGreeting from './PersonGreeting.vue';
             const firstName = ref('');
             const lastName = ref('');
 
+            function callHeroes(hero){
+                alert(`Calling ${hero}`);
+            }
+
             return {
                 firstName,
                 lastName,
+                callHeroes
             }
         }
     }

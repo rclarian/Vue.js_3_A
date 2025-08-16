@@ -1,17 +1,17 @@
 <template>
   <div>
-    <TemplateRef/>
+    <PersonView/>
     
   </div>
 </template>
 
 <script>
-import TemplateRef from './components/TemplateRef.vue';
+import PersonView from './components/PersonView.vue';
 
 export default {
   name: 'App',
   components: {
-    TemplateRef,
+    PersonView,
     
   },
   data() {
